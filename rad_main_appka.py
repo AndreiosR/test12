@@ -2,6 +2,11 @@
 from config import *
 
 # Main Window Functions
+def prepocet_CML(weight,activityfactor):
+    bmr=weight*24.2
+    cml=bmr*activityfactor
+    cmlrounded= round(cml, 1)
+    return cmlrounded
 
 
 # Main Window Variables
