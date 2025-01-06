@@ -7,15 +7,14 @@ def my_first_gui_function():
     text_welcome.value = "Zdravím"
     try:
         weight=float(txtbox_weight.value)
+        cmlrounded=prepocet_CML()
     except:
         text_cml.value = "Vlož číslo, prosím"
         return
-    bmr=weight*24.2
     activityfactor=float(txtbox_af.value)
-    cml=bmr*activityfactor
-    cmlrounded= round(cml, 1)
     text_cml.value = "Tvé denní výdaje:"
     text_cml.value = cmlrounded
+    prepocet_CML()
 
 ### GUI App
 app = App(title="My App", width=770, height=640)
@@ -51,7 +50,7 @@ button = PushButton(window1, command=my_first_gui_function)
 # Display an image
 image_widget = Picture(
     window1,
-    image="resources/images/camera-icon.png",
+    image="resources/camera-icon.png",
     width=680,
     height=480,
     align="bottom"
