@@ -16,8 +16,21 @@ def my_first_gui_function():
     text_cml.value = cmlrounded
     prepocet_CML()
 
+def mesto(mesto):
+    mesto=choice.value
+    text_b=mesto_backend(mesto)
+
+
 ### GUI App
-app = App(title="My App", width=770, height=640)
+
+app = App(layout="auto", title="My App", width=770, height=640)
+text_1 = Text(app, text="BMI")
+text_2 = Text(app, text="Select your city:")
+choice = ButtonGroup(app, options=["Brno", "Wien", "Bratislava"], selected="Brno", command=mesto)
+checkbox = CheckBox(app, text="Your excercise")
+
+
+
 
 ## Window 1
 window1 = Box(app, visible=True)
@@ -55,3 +68,5 @@ image_widget = Picture(
     height=480,
     align="bottom"
 )
+
+app.display()
